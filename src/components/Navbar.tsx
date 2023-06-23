@@ -6,7 +6,7 @@ interface NavbarProps {
 
 export function Navbar({children}: NavbarProps) {
     return (
-        <div className="flex flex-row justify-between items-center bg-light-cream shadow-lg mt-2">
+        <div className="flex flex-row justify-between items-center bg-light-cream shadow-lg mt-2 sticky top-0">
             <div>
                 <p className='mx-3 font-normal text-2xl'>
                     Baked By Al

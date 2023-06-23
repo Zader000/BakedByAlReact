@@ -9,6 +9,14 @@
   .active-nav {
     @apply bg-confetti-blue text-white;
   }
+
+  .gallery-image {
+    @apply w-52 shadow-lg rounded cursor-pointer;
+  }
+
+  .full-gallery-image {
+    @apply w-96 shadow-lg rounded;
+  }
 }
 
 body {
