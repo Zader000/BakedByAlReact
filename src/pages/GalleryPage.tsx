@@ -32,7 +32,7 @@ export function GalleryPage() {
             <br/>
             {showFullSize && (
                 <div className='popup'>
-                    <button onClick={() => setShowFullSize(false)} className='text-6xl absolute right-0 top-10'><BsX/></button>
+                    <button onClick={() => setShowFullSize(false)} className='text-6xl absolute right-10 top-10'><BsX className='text-white'/></button>
                     <div className='popup-inner'>
                         <div className='flex flex-row gap-5'>
                             {selectedIndex > 0 && (
@@ -41,7 +41,7 @@ export function GalleryPage() {
                                         setSelectedIndex(selectedIndex - 1);
                                         setFullSize(cakeImages[selectedIndex - 1]);
                                     }
-                                }} className='text-5xl'><BsChevronLeft/></button>
+                                }} className='text-5xl'><BsChevronLeft className='text-white'/></button>
                             )}
                             <img src={`${fullSize}`} className='full-gallery-image' alt='cake'/>
                             {selectedIndex < cakeImages.length - 1 && (
@@ -50,28 +50,25 @@ export function GalleryPage() {
                                         setSelectedIndex(selectedIndex + 1);
                                         setFullSize(cakeImages[selectedIndex + 1]);
                                     }
-                                }} className='text-5xl'><BsChevronRight/></button>
+                                }} className='text-5xl'><BsChevronRight className={'text-white'}/></button>
                             )}
-
                         </div>
                     </div>
                 </div>
             )}
-            {!showFullSize && (
-                <div className='flex flex-row justify-center w-screen'>
-                    <div className='flex flex-row gap-5 flex-wrap justify-center w-3/4'>
-                        {cakeImages.map((image, index) => (
-                            <>
-                                <img src={image} alt='cake' className='gallery-image' onClick={() => {
-                                    setFullSize(image);
-                                    setShowFullSize(true);
-                                    setSelectedIndex(index);
-                                }}/>
-                            </>
-                        ))}
-                    </div>
+            <div className='flex flex-row justify-center w-screen'>
+                <div className='flex flex-row gap-5 flex-wrap justify-center w-3/4'>
+                    {cakeImages.map((image, index) => (
+                        <>
+                            <img src={image} alt='cake' className='gallery-image' onClick={() => {
+                                setFullSize(image);
+                                setShowFullSize(true);
+                                setSelectedIndex(index);
+                            }}/>
+                        </>
+                    ))}
                 </div>
-                )}
+            </div>
         </>
     )
 }
