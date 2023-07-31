@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import {Navbar, NavItem} from "../components/Navbar";
 import {HomePage} from "./HomePage";
 import {GalleryPage} from "./GalleryPage";
+import {OrderPage} from "./OrderPage";
+import {ContactPage} from "./ContactPage";
 
 interface MainPageProps {
     children?: React.ReactNode;
@@ -24,8 +26,12 @@ export function MainPage({children}: MainPageProps) {
                 {page === 1 && (
                     <GalleryPage/>
                 )}
-                {page === 2 && <h1 className="text-5xl font-normal">Contact</h1>}
-                {page === 3 && <h1 className="text-5xl font-normal">Order</h1>}
+                {page === 2 &&
+                    <ContactPage/>
+                }
+                {page === 3 &&
+                    <OrderPage/>
+                }
             </div>
         </div>
     )
